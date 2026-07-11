@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+*.log
+
+# Demo data dump ships with real test-mode payment gateway API keys embedded
+installer/database.sql
