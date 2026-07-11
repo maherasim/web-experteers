@@ -63,11 +63,6 @@
                     <p class="text-capitalize">{{$package->duration == 'monthly' ? __('Monthly') : __('Yearly')}}</p>
                   @endif
                 </div>
-                <div class="pricing_price">
-                  <h3>{{$bex->base_currency_symbol_position == 'left' ? $bex->base_currency_symbol : ''}}
-                    {{$package->price}} {{$bex->base_currency_symbol_position == 'right' ? $bex->base_currency_symbol : ''}}
-                  </h3>
-                </div>
                 <div class="pricing_body">
                   {!! replaceBaseUrl(convertUtf8($package->description)) !!}
                 </div>
@@ -89,15 +84,8 @@
                   @endguest
                 @else
                   @if ($package->order_status != 0)
-                    @php
-                      if($package->order_status == 1) {
-                        $link = route('front.packageorder.index', $package->id);
-                      } elseif ($package->order_status == 2) {
-                        $link = $package->link;
-                      }
-                    @endphp
                     <div class="pricing_button">
-                      <a href="{{ $link }}" @if($package->order_status == 2) target="_blank" @endif class="lawyer_btn">{{__('Place Order')}}</a>
+                      <a href="{{ route('front.quote') }}" class="lawyer_btn">{{__('Get Free Quote')}}</a>
                     </div>
                   @endif
                 @endif
