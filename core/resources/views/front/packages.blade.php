@@ -59,11 +59,11 @@
                 @if ($bex->recurring_billing == 1)
                   <small class="text-capitalize">{{$package->duration == 'monthly' ? __('Monthly') : __('Yearly')}}</small>
                 @endif
-                <div class="price">
+                {{-- <div class="price">
                   <h1>
                     {{$bex->base_currency_symbol_position == 'left' ? $bex->base_currency_symbol : ''}}{{$package->price}}{{$bex->base_currency_symbol_position == 'right' ? $bex->base_currency_symbol : ''}}
                   </h1>
-                </div>
+                </div> --}}
                 <div class="features">
                   {!! replaceBaseUrl(convertUtf8($package->description)) !!}
                 </div>
@@ -94,7 +94,7 @@
                       }
                     @endphp
 
-                    <a href="{{ $link }}" @if($package->order_status == 2) target="_blank" @endif class="pricing-btn">{{__('Place Order')}}</a>
+                    <a href="{{ $link }}" @if($package->order_status == 2) target="_blank" @endif class="pricing-btn">{{__('Get Free Quote')}}</a>
                   @endif
                 @endif
               </div>
