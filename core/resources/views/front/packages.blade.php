@@ -94,7 +94,7 @@
                       }
                     @endphp
 
-                    <a href="{{ $link }}" @if($package->order_status == 2) target="_blank" @endif class="pricing-btn">{{__('Place Order')}}</a>
+                    <a href="{{ $link }}" @if($package->order_status == 2) target="_blank" @endif class="pricing-btn">{{__('Place Order asim')}}</a>
                   @endif
                 @endif
               </div>
