@@ -367,17 +367,17 @@
           @foreach ($packages as $key => $package)
             <div class="single-pricing-table">
                <span class="title">{{convertUtf8($package->title)}}</span>
-               <div class="price">
+               {{-- <div class="price">
                   <h1>
                       {{$bex->base_currency_symbol_position == 'left' ? $bex->base_currency_symbol : ''}}{{$package->price}}{{$bex->base_currency_symbol_position == 'right' ? $bex->base_currency_symbol : ''}}
                   </h1>
-               </div>
+               </div> --}}
                <div class="features">
                   {!! replaceBaseUrl(convertUtf8($package->description)) !!}
                </div>
 
                @if ($package->order_status == 1)
-               <a href="{{route('front.packageorder.index', $package->id)}}" class="pricing-btn">{{__('Place Order')}}</a>
+               <a href="{{route('front.packageorder.index', $package->id)}}" class="pricing-btn">{{__('Get Free Qoute')}}</a>
                @endif
 
             </div>
